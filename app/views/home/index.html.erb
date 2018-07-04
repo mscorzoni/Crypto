@@ -5,4 +5,12 @@
 <br>
 
 
-<%= @coins  %>
+<% @coins["data"].each do |coin, value|  %>
+  <% if @my_coins.include?(value["symbol"]) %> 
+    <%= value["name"] %> : $ <%= value["quotes"]["USD"]["price"]%>
+    <br>
+    Rank: <%= value["rank"]  %>
+    <br>
+  <% end  %> 
+<% end %>
+
