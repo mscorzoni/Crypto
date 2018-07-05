@@ -15,6 +15,7 @@ class HomeController < ApplicationController
 
   def lookup
     @symbol = params[:sym]
+    @symbol = @symbol.upcase if @symbol
   end
 
 end
